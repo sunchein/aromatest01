@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12型人格香氛系统 | 发现你的专属香氛</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // 配置Tailwind自定义颜色和字体
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5CF6', // 紫色作为主色调，代表香氛的优雅与神秘
+                        secondary: '#EC4899', // 粉色作为辅助色，代表香氛的多样性
+                        accent: '#F59E0B',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            }
+            .scent-gradient {
+                background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(139,92,246,0.1) 100%);
+            }
+            .perfume-bottle {
+                transition: transform 0.5s ease;
+            }
+            .perfume-bottle:hover {
+                transform: rotate(5deg) scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-flask text-primary text-2xl"></i>
+                <h1 class="text-xl md:text-2xl font-bold text-primary">12型人格香氛系统</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#intro" class="hover:text-primary transition-colors">介绍</a>
+                <a href="#types" class="hover:text-primary transition-colors">人格类型</a>
+                <a href="#discover" class="hover:text-primary transition-colors">发现你的香氛</a>
+                <a href="#scents" class="hover:text-primary transition-colors">香氛系列</a>
+                <a href="#about" class="hover:text-primary transition-colors">关于系统</a>
+            </nav>
+            <button class="md:hidden text-gray-700" id="menu-toggle">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white w-full border-t" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#intro" class="py-2 hover:text-primary transition-colors">介绍</a>
+                <a href="#types" class="py-2 hover:text-primary transition-colors">人格类型</a>
+                <a href="#discover" class="py-2 hover:text-primary transition-colors">发现你的香氛</a>
+                <a href="#scents" class="py-2 hover:text-primary transition-colors">香氛系列</a>
+                <a href="#about" class="py-2 hover:text-primary transition-colors">关于系统</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="gradient-bg text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 text-shadow">探索人格与香氛的奥秘</h2>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90">每个人格都有其独特的香氛，发现与你灵魂共鸣的专属气息</p>
+            <a href="#discover" class="bg-white text-primary font-medium px-6 py-3 rounded-full inline-flex items-center hover:bg-gray-100 transition-colors shadow-lg">
+                开始香氛测评 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 介绍部分 -->
+    <section id="intro" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-dark">人格与香氛的奇妙关联</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    12型人格香氛系统基于心理学研究与芳香疗法的结合，将人类的人格特质划分为12种基本类型，每种类型都对应着独特的香氛配方。
+                </p>
+                <p class="text-gray-700 mb-8 leading-relaxed">
+                    这个系统不仅帮助我们理解自己，更能通过精心调配的香氛，增强个人魅力，平衡情绪，提升生活品质。
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">自我认知</h3>
+                        <p class="text-gray-600">通过香氛探索内心，深入了解自己的人格特质</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-flask"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">专属香氛</h3>
+                        <p class="text-gray-600">发现与你人格完美匹配的独特香氛配方</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">情绪平衡</h3>
+                        <p class="text-gray-600">利用芳香疗法的力量，调节情绪，提升生活质量</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 人格类型展示 -->
+    <section id="types" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center text-dark">12种人格类型与对应香氛</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">每种人格类型都有其独特的特征与专属香氛</p>
+            
+            <!-- 人格类型过滤器 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button class="filter-btn active px-4 py-2 rounded-full bg-primary text-white" data-filter="all">全部类型</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors" data-filter="thinking">思考型</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors" data-filter="feeling">情感型</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors" data-filter="doing">行动型</button>
+            </div>
+            
+            <!-- 人格类型卡片网格 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- 人格类型1：PDF中定义的分析型 -->
+                <div class="personality-card bg-white rounded-xl shadow-md overflow-hidden card-hover" data-category="thinking">
+                    <div class="h-40 bg-blue-500 relative overflow-hidden">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/241e94328f9b4909a63b74d85dbfa254.jpg~tplv-a9rns2rl98-24:720:720.image?rk3s=1fb89129&x-expires=1757160322&x-signature=5kW469UWrAjaNnQVbTpbwhtdeM4%3D" 
+                             alt="分析型人格的象征图像" class="w-full h-full object-cover opacity-80">
+                        <div class="absolute top-4 right-4 bg-white text-blue-500 text-sm font-bold px-3 py-1 rounded-full">思考型</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">分析型</h3>
+                        <p class="text-gray-600 mb-3 text-sm">理性、逻辑、注重细节，善于分析问题并找出解决方案。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-scent mr-2 text-primary"></i>
+                            <span>专属香氛：雪松与檀香</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">理性</span>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">逻辑</span>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">细致</span>
+                        </div>
+                        <button class="type-detail-btn w-full text-center text-primary font-medium py-2 border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors" 
+                                data-type="analytical">了解更多</button>
+                    </div>
+                </div>
+                
+                <!-- 人格类型2：PDF中定义的关怀型 -->
+                <div class="personality-card bg-white rounded-xl shadow-md overflow-hidden card-hover" data-category="feeling">
+                    <div class="h-40 bg-pink-500 relative overflow-hidden">
+                        <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/81477ff7ead646b1b081084d7671deee.jpg~tplv-a9rns2rl98-24:720:720.image?rk3s=1fb89129&x-expires=1757160572&x-signature=CJf3rardOqCyq3%2FHGbisUqD8SEI%3D" 
+                             alt="关怀型人格的象征图像" class="w-full h-full object-cover opacity-80">
+                        <div class="absolute top-4 right-4 bg-white text-pink-500 text-sm font-bold px-3 py-1 rounded-full">情感型</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">关怀型</h3>
+                        <p class="text-gray-600 mb-3 text-sm">富有同情心，善于理解他人感受，总是愿意提供帮助。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-scent mr-2 text-primary"></i>
+                            <span>专属香氛：玫瑰与薰衣草</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded">同情</span>
+                            <span class="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded">体贴</span>
+                            <span class="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded">助人</span>
+                        </div>
+                        <button class="type-detail-btn w-full text-center text-primary font-medium py-2 border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors"
+                                data-type="caring">了解更多</button>
+                    </div>
+                </div>
+                
+                <!-- 人格类型3：PDF中定义的行动型 -->
+                <div class="personality-card bg-white rounded-xl shadow-md overflow-hidden card-hover" data-category="doing">
+                    <div class="h-40 bg-orange-500 relative overflow-hidden">
+                        <img src="https://picsum.photos/id/1076/400/300" alt="行动型人格的象征图像" class="w-full h-full object-cover opacity-80">
+                        <div class="absolute top-4 right-4 bg-white text-orange-500 text-sm font-bold px-3 py-1 rounded-full">行动型</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">行动型</h3>
+                        <p class="text-gray-600 mb-3 text-sm">果断、务实、充满活力，善于将想法转化为实际行动。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-scent mr-2 text-primary"></i>
+                            <span>专属香氛：柑橘与迷迭香</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">果断</span>
+                            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">务实</span>
+                            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">活力</span>
+                        </div>
+                        <button class="type-detail-btn w-full text-center text-primary font-medium py-2 border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors"
+                                data-type="action-oriented">了解更多</button>
+                    </div>
+                </div>
+                
+                <!-- 人格类型4-12按PDF内容依次排列 -->
+                <!-- 战略型 -->
+                <div class="personality-card bg-white rounded-xl shadow-md overflow-hidden card-hover" data-category="thinking">
+                    <div class="h-40 bg-purple-500 relative overflow-hidden">
+                        <img src="https://picsum.photos/id/1025/400/300" alt="战略型人格的象征图像" class="w-full h-full object-cover opacity-80">
+                        <div class="absolute top-4 right-4 bg-white text-purple-500 text-sm font-bold px-3 py-1 rounded-full">思考型</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">战略型</h3>
+                        <p class="text-gray-600 mb-3 text-sm">富有远见，善于规划，能够看到全局并制定长期策略。</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fa fa-scent mr-2 text-primary"></i>
+                            <span>专属香氛：檀香与广藿香</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">远见</span>
+                            <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">规划</span>
+                            <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">全局</span>
+                        </div>
+                        <button class="type-detail-btn w-full text-center text-primary font-medium py-2 border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors"
+                                data-type="strategic">了解更多</button>
+                    </div>
+                </div>
+                
+                <!-- 其余人格类型卡片按类似结构添加 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 发现你的人格香氛 -->
+    <section id="discover" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center text-dark">发现你的专属香氛</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">通过简短的测试，找到与你人格最匹配的香氛</p>
+            
+            <div class="max-w-2xl mx-auto bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                <div class="p-6 md:p-8">
+                    <div id="test-intro" class="text-center mb-8">
+                        <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fa fa-flask text-primary text-4xl"></i>
+                        </div>
+                        <p class="text-gray-700 mb-6">回答以下12个问题，我们将根据你的人格特质，推荐最适合你的专属香氛配方。</p>
+                        <button id="start-test" class="bg-primary text-white font-medium px-6 py-3 rounded-full inline-flex items-center hover:bg-primary/90 transition-colors shadow-md">
+                            开始香氛测评 <i class="fa fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                    
+                    <div id="test-container" class="hidden">
+                        <div class="mb-6 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">问题 <span id="question-number">1</span>/12</h3>
+                            <div class="w-32 bg-gray-200 rounded-full h-2">
+                                <div id="test-progress" class="bg-primary h-2 rounded-full" style="width: 8%"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="question-container" class="mb-8">
+                            <p class="text-xl font-medium mb-6" id="current-question">当你有空闲时间时，你更倾向于做什么？</p>
+                            <div class="space-y-3" id="answers-container">
+                                <button class="answer-btn w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors" data-value="A">
+                                    阅读一本有深度的书籍或进行思考
+                                </button>
+                                <button class="answer-btn w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors" data-value="B">
+                                    与朋友聚会或帮助他人解决问题
+                                </button>
+                                <button class="answer-btn w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors" data-value="C">
+                                    进行户外活动或着手完成一个项目
+                                </button>
+                                <button class="answer-btn w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors" data-value="D">
+                                    尝试新的体验或创造性的活动
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <button id="prev-question" class="px-5 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors hidden">
+                                <i class="fa fa-arrow-left mr-2"></i> 上一题
+                            </button>
+                            <button id="next-question" class="px-5 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                                下一题 <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="test-results" class="hidden">
+                        <div class="text-center py-6">
+                            <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fa fa-check text-primary text-4xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">你的人格类型是</h3>
+                            <div class="text-xl font-medium text-primary mb-2" id="result-type">分析型</div>
+                            <p class="text-gray-600 mb-6 max-w-md mx-auto" id="result-description">
+                                你理性、逻辑、注重细节，善于分析问题并找出解决方案。
+                            </p>
+                        </div>
+                        
+                        <!-- 香氛结果部分，重点突出 -->
+                        <div class="bg-white rounded-xl shadow-sm p-6 mb-8 scent-gradient">
+                            <h4 class="text-xl font-bold mb-4 text-center">你的专属香氛配方</h4>
+                            
+                            <div class="flex flex-col md:flex-row items-center gap-6 mb-6">
+                                <div class="w-32 h-64 relative">
+                                    <!-- 香水瓶图示 -->
+                                    <div class="perfume-bottle absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-48 border-4 border-primary rounded-t-full rounded-b-3xl flex items-end justify-center">
+                                        <div class="w-20 h-32 bg-primary/30 rounded-t-full rounded-b-3xl"></div>
+                                        <div class="absolute top-0 w-6 h-12 bg-primary rounded-full -mt-6"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex-1 text-center md:text-left">
+                                    <h5 class="font-bold text-lg mb-2" id="scent-name">雪松檀香</h5>
+                                    <p class="text-gray-600 mb-4" id="scent-description">
+                                        这款香氛融合了雪松的沉稳与檀香的深邃，展现你的理性与智慧，增强专注力与决策能力。
+                                    </p>
+                                    <div class="flex flex-wrap justify-center md:justify-start gap-2" id="scent-notes">
+                                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">雪松</span>
+                                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">檀香</span>
+                                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">佛手柑</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h5 class="font-bold mb-2 text-sm">配方比例</h5>
+                                    <ul class="text-sm text-gray-600 space-y-1" id="scent-formula">
+                                        <li class="flex justify-between">
+                                            <span>雪松精油</span>
+                                            <span class="font-medium">40%</span>
+                                        </li>
+                                        <li class="flex justify-between">
+                                            <span>檀香精油</span>
+                                            <span class="font-medium">30%</span>
+                                        </li>
+                                        <li class="flex justify-between">
+                                            <span>佛手柑精油</span>
+                                            <span class="font-medium">20%</span>
+                                        </li>
+                                        <li class="flex justify-between">
+                                            <span>基础油</span>
+                                            <span class="font-medium">10%</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h5 class="font-bold mb-2 text-sm">香氛功效</h5>
+                                    <ul class="text-sm text-gray-600 space-y-1" id="scent-benefits">
+                                        <li class="flex items-start">
+                                            <i class="fa fa-plus-circle text-green-500 mt-1 mr-2 text-xs"></i>
+                                            <span>增强专注力与分析能力</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-plus-circle text-green-500 mt-1 mr-2 text-xs"></i>
+                                            <span>缓解压力，保持冷静思考</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-plus-circle text-green-500 mt-1 mr-2 text-xs"></i>
+                                            <span>提升决策质量与判断力</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="#" id="result-detail-link" class="inline-block text-primary font-medium hover:underline mb-6">
+                                查看详细香氛解析 <i class="fa fa-angle-right ml-1"></i>
+                            </a>
+                            <button id="restart-test" class="bg-gray-200 text-gray-700 font-medium px-6 py-3 rounded-full inline-flex items-center hover:bg-gray-300 transition-colors">
+                                重新测试 <i class="fa fa-refresh ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 香氛系列展示 -->
+    <section id="scents" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center text-dark">12型人格香氛系列</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">每一款香氛都为特定人格精心调配</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 香氛系列1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-56 relative">
+                        <img src="https://picsum.photos/id/96/600/400" alt="思考型香氛系列" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                            <h3 class="text-white text-xl font-bold p-6">思考型香氛系列</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">为理性、分析型人格设计的香氛，以木质调为主，帮助集中注意力，提升思维清晰度。</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">雪松</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">檀香</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">广藿香</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                            探索系列 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 香氛系列2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-56 relative">
+                        <img src="https://picsum.photos/id/118/600/400" alt="情感型香氛系列" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                            <h3 class="text-white text-xl font-bold p-6">情感型香氛系列</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">为富有同情心、情感丰富的人格设计，以花香调为主，促进和谐关系与自我表达。</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">玫瑰</span>
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">薰衣草</span>
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">茉莉</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                            探索系列 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 香氛系列3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-56 relative">
+                        <img src="https://picsum.photos/id/131/600/400" alt="行动型香氛系列" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                            <h3 class="text-white text-xl font-bold p-6">行动型香氛系列</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">为活力充沛、行动力强的人格设计，以柑橘调为主，提升能量与动力，激发创造力。</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">佛手柑</span>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">柠檬</span>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">迷迭香</span>
+                        </div>
+                        <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                            探索系列 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于系统 -->
